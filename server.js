@@ -2,12 +2,11 @@ const express = require('express')
 const initDB = require('./config/db')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
-
 const app = express()
 
 // IP PUBLICA: http://195.55.82.26:2121/
 
-const port = 2121
+const port = 8443
 const passport = require('passport')
 const https = require('https');
 
@@ -17,7 +16,9 @@ const key = fs.readFileSync('./key.pem');
 
 const cert = fs.readFileSync('./cert.pem');
 
-const server = https.createServer({key: key, cert: cert }, app);
+const server = https.createServer({key: key, cert: cert }, app).listen(443, function(){
+    console.log('HTTPS listening on port 443');
+});;
 // for parsing json
 app.use(helmet());
 
@@ -38,7 +39,7 @@ app.use((req, res) => {
     res.status(404).send("<h1>Página no encontrada</h1> <br>Miranza | Powered by TIGestión");
 });
 
-app.listen(port, () => {
+/*app.listen(port, () => {
     console.log(`Servidor API TiGestión en el puerto ${port}`)
-})
+})*/
 
