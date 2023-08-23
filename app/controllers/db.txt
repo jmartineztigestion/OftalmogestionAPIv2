@@ -1,0 +1,19 @@
+IP: 192.168.22.4
+base de datos: citas_quirofano
+vista o tabla: quirofano_q
+user: audiovisuales
+pass: @Ud10v1$u@l3$
+
+IP: 192.168.22.4
+base de datos: citas_quirofano
+vista o tabla: quirofano_q
+user: audiovisuales
+pass: @Ud10v1$u@l3$
+
+'oftalmogestion_ioa' => [
+            'driver' => 'mysql',
+            'host' => '195.55.82.26',
+            'port' => '14330',
+            'database' => 'smartpanel',
+            'username' => 'smartpanel',
+            'password' => 'sm$rtp$nel2$2!',
